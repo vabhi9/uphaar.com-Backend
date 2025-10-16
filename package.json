@@ -1,0 +1,30 @@
+{
+  "name": "uphaar-as-backend",
+  "version": "1.0.0",
+  "description": "This is the backend part of E-Commerce",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "MDivine",
+    "E-Commercw"
+  ],
+  "author": "Abhinav Verma",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.7.0",
+    "cookie-parser": "^1.4.7",
+    "coop": "^0.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.12.2",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.9"
+  }
+}
