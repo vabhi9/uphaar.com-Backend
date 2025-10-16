@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import productRouter from "./routes/product.route.js";
 import userRouter from "./routes/user.routes.js";
-import cartRouter from './routes/cart.router.js'
+import cartRouter from "./routes/cart.router.js";
 dotenv.config({
   path: "./.env",
 });
@@ -19,6 +19,8 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+console.log(process.env.CORS_ORIGIN);
 
 app.use((req, res, next) => {
   console.log("Request Origin:", req.headers.origin);
@@ -40,6 +42,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/api/v1/product", productRouter);
 app.use("/api/users", userRouter);
-app.use("/api/cart",cartRouter);
+app.use("/api/cart", cartRouter);
 
 export default app;
