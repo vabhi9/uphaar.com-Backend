@@ -20,7 +20,7 @@ app.use(
   })
 );
 
-console.log(process.env.CORS_ORIGIN);
+console.log("CIRS_ORIGIN is:",process.env.CORS_ORIGIN);
 
 app.use((req, res, next) => {
   console.log("Request Origin:", req.headers.origin);
