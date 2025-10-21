@@ -96,8 +96,8 @@ const registerQuery = async (req, res, next) => {
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: "abhinavverma2809@gmail.com", // Sender's Email or Admin's Email Address
-        pass: "viax qcki vknj brmn",
+        user: process.env.EMAIL_USER, // Sender's Email or Admin's Email Address
+        pass: process.env.EMAIL_PASS,
       },
     });
 
