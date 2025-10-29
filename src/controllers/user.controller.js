@@ -55,6 +55,7 @@ const loginUser = async (req, res, next) => {
     sameSite: "lax",
   });
   console.log("Cookie set to client Successfully");
+  console.log("req.cookies.token", req.cookies.token);
   res.status(200).json({ message: "Cookie Set!", token, user });
 };
 
