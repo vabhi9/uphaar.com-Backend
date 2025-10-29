@@ -51,7 +51,7 @@ const loginUser = async (req, res, next) => {
 
   res.cookie("token", token, {
     httpOnly: true,
-    secure: false, // true only in production
+    secure: true, // true only in production
     sameSite: "None",
   });
   console.log("Cookie set to client Successfully");
