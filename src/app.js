@@ -20,7 +20,7 @@ app.use(
   })
 );
 
-console.log("CIRS_ORIGIN is:",process.env.CORS_ORIGIN);
+console.log("CIRS_ORIGIN is:", process.env.CORS_ORIGIN);
 
 app.use((req, res, next) => {
   console.log("Request Origin:", req.headers.origin);
@@ -44,4 +44,9 @@ app.use("/api/v1/product", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/cart", cartRouter);
 
+res.cookie("token", token, {
+  httpOnly: true,
+  secure: true, // important for HTTPS
+  sameSite: "None", // required for cross-site cookies
+});
 export default app;
