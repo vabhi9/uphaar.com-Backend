@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 const authUser = async (req, res, next) => {
-  const token = req.cookies.token || req.headers.authorization?.split(" ")[1];
+  const token = await req.cookies.token || req.headers.authorization?.split(" ")[1];
   console.log("Cookies received in authUser:", req.cookies);
   if (!token) {
     return res.status(401).json({ message: "You're Unauthorized #1" });
