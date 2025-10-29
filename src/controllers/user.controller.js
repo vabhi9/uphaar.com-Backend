@@ -53,6 +53,7 @@ const loginUser = async (req, res, next) => {
     httpOnly: true,
     secure: true, // true only in production
     sameSite: "None",
+    maxAge: 7 * 24 * 60 * 60 * 1000,
   });
   console.log("Cookie set to client Successfully");
   console.log("req.cookies.token", req.cookies.token);
