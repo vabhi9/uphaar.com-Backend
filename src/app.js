@@ -44,9 +44,4 @@ app.use("/api/v1/product", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/cart", cartRouter);
 
-res.cookie("token", token, {
-  httpOnly: true,
-  secure: true, // important for HTTPS
-  sameSite: "None", // required for cross-site cookies
-});
 export default app;

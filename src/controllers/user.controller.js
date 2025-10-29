@@ -52,10 +52,11 @@ const loginUser = async (req, res, next) => {
   res.cookie("token", token, {
     httpOnly: true,
     secure: false, // true only in production
-    sameSite: "lax",
+    sameSite: "None",
   });
   console.log("Cookie set to client Successfully");
   console.log("req.cookies.token", req.cookies.token);
+  console.log("req.headers.authorization", req.headers.authorization);
   res.status(200).json({ message: "Cookie Set!", token, user });
 };
 
