@@ -59,7 +59,7 @@ const loginUser = async (req, res, next) => {
 };
 
 const getUserProfile = async (req, res, next) => {
-  res.status(200).json(req.user);
+  await res.status(200).json(req.user);
 };
 
 const logoutUser = async (req, res, next) => {
@@ -92,17 +92,17 @@ const registerQuery = async (req, res, next) => {
     });
 
     const auth = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true, // true for 465, false for other ports
+      host: "smtp.resend.com",
+      port: 587,
+      secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.EMAIL_USER, // Sender's Email or Admin's Email Address
-        pass: process.env.EMAIL_PASS,
+        user: "resend", // Resend requires 'resend' as username
+        pass: process.env.RESEND_API_KEY,
       },
     });
 
     const receiver = {
-      from: "abhinavverma2809@gmail.com",
+      from: process.env.EMAIL_USER,
       to: email,
       subject: "Node.JS Modemailer Testing",
       text: `Hey ${fullName}, Thanks for Contact Us, Your Query is registered with us & Our Team will Contact You Shortly!`,
